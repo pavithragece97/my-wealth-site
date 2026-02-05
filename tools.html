@@ -1,59 +1,43 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Strategic Tools | SIP & Risk Calculator</title>
+    <title>Strategic Tools | Krishna Vriddhi Capital</title>
     <style>
-        :root { --blue: #002e5b; --green: #2d7a31; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #eef2f7; }
-        nav { background: var(--blue); padding: 15px; text-align: center; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #eef2f7; text-align: center; }
+        nav { background: #002e5b; padding: 15px; }
         nav a { color: white; text-decoration: none; margin: 0 15px; }
-        .calc-box { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 15px; background: var(--blue); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .res { margin-top: 20px; padding: 15px; background: #f0fdf4; color: #166534; font-weight: bold; border-radius: 5px; }
+        .calc-box { max-width: 500px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: left; }
+        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background: #002e5b; color: white; border: none; font-weight: bold; cursor: pointer; }
+        .wa-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="offerings.html">Offerings</a>
-        <a href="tools.html">Strategic Tools</a>
-        <a href="visit.html">Visit Us</a>
-    </nav>
-
+    <nav><a href="index.html">Home</a> <a href="offerings.html">Offerings</a> <a href="tools.html">Strategic Tools</a> <a href="visit.html">Visit Us</a></nav>
     <div class="calc-box">
-        <h2 style="color:var(--blue)">SIP Wealth Calculator</h2>
+        <h2>SIP Calculator</h2>
         <label>Monthly SIP (₹)</label><input type="number" id="amt" value="10000">
-        <label>Duration (Years)</label><input type="number" id="yrs" value="10">
-        <button onclick="calcS()">Calculate Future Value</button>
-        <div id="sr" class="res">Future Value: ₹ 23,23,391 (at 12%)</div>
+        <label>Years</label><input type="number" id="yrs" value="10">
+        <button onclick="calcS()">Calculate</button>
+        <p id="sr" style="font-weight:bold; color:#2d7a31;"></p>
     </div>
-
     <div class="calc-box">
-        <h2 style="color:var(--blue)">Risk Appetite Test</h2>
-        <label>Investment Time Horizon</label>
-        <select id="th"><option value="3">Short Term (< 3 yrs)</option><option value="7">Medium Term</option><option value="10">Long Term (7+ yrs)</option></select>
-        <label>How do you view market volatility?</label>
-        <select id="vol"><option value="2">Anxiety/Stressful</option><option value="6">Part of the game</option><option value="10">An opportunity to buy</option></select>
-        <button onclick="calcR()">Determine Profile</button>
-        <div id="rr" class="res">Profile: Pending</div>
+        <h2>Risk Appetite Test</h2>
+        <label>Investment Horizon</label>
+        <select id="th"><option value="5">Short Term</option><option value="10">Long Term</option></select>
+        <button onclick="calcR()">Check Profile</button>
+        <p id="rr" style="font-weight:bold; color:#2d7a31;"></p>
     </div>
-
     <script>
         function calcS(){
-            let p = document.getElementById('amt').value;
-            let r = 0.01; // 12% annual
-            let n = document.getElementById('yrs').value * 12;
+            let p = document.getElementById('amt').value; let n = document.getElementById('yrs').value * 12; let r = 0.01;
             let f = p * (((Math.pow(1+r, n)) - 1) / r) * (1+r);
-            document.getElementById('sr').innerText = "Future Value: ₹ " + Math.round(f).toLocaleString('en-IN');
+            document.getElementById('sr').innerText = "Estimated Value: ₹ " + Math.round(f).toLocaleString('en-IN');
         }
-        function calcR(){
-            let s = parseInt(document.getElementById('th').value) + parseInt(document.getElementById('vol').value);
-            let p = s > 14 ? "Aggressive" : s > 8 ? "Moderate" : "Conservative";
-            document.getElementById('rr').innerText = "Risk Profile: " + p;
-        }
+        function calcR(){ document.getElementById('rr').innerText = "Risk Profile: Aggressive (High Growth)"; }
     </script>
+    <a href="https://api.whatsapp.com/send/?phone=919054829239&text=Hello+Krishna+Vriddhi+Capital%2C+I+am+pavithrag1997%40gmail.com.+I+want+to+inquire+about+your+wealth+services." class="wa-btn" target="_blank">💬</a>
 </body>
 </html>
