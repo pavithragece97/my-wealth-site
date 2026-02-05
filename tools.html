@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strategic Tools | SIP & Risk Calculator</title>
+    <style>
+        :root { --blue: #002e5b; --green: #2d7a31; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #eef2f7; }
+        nav { background: var(--blue); padding: 15px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; }
+        .calc-box { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background: var(--blue); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .res { margin-top: 20px; padding: 15px; background: #f0fdf4; color: #166534; font-weight: bold; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="offerings.html">Offerings</a>
+        <a href="tools.html">Strategic Tools</a>
+        <a href="visit.html">Visit Us</a>
+    </nav>
+
+    <div class="calc-box">
+        <h2 style="color:var(--blue)">SIP Wealth Calculator</h2>
+        <label>Monthly SIP (₹)</label><input type="number" id="amt" value="10000">
+        <label>Duration (Years)</label><input type="number" id="yrs" value="10">
+        <button onclick="calcS()">Calculate Future Value</button>
+        <div id="sr" class="res">Future Value: ₹ 23,23,391 (at 12%)</div>
+    </div>
+
+    <div class="calc-box">
+        <h2 style="color:var(--blue)">Risk Appetite Test</h2>
+        <label>Investment Time Horizon</label>
+        <select id="th"><option value="3">Short Term (< 3 yrs)</option><option value="7">Medium Term</option><option value="10">Long Term (7+ yrs)</option></select>
+        <label>How do you view market volatility?</label>
+        <select id="vol"><option value="2">Anxiety/Stressful</option><option value="6">Part of the game</option><option value="10">An opportunity to buy</option></select>
+        <button onclick="calcR()">Determine Profile</button>
+        <div id="rr" class="res">Profile: Pending</div>
+    </div>
+
+    <script>
+        function calcS(){
+            let p = document.getElementById('amt').value;
+            let r = 0.01; // 12% annual
+            let n = document.getElementById('yrs').value * 12;
+            let f = p * (((Math.pow(1+r, n)) - 1) / r) * (1+r);
+            document.getElementById('sr').innerText = "Future Value: ₹ " + Math.round(f).toLocaleString('en-IN');
+        }
+        function calcR(){
+            let s = parseInt(document.getElementById('th').value) + parseInt(document.getElementById('vol').value);
+            let p = s > 14 ? "Aggressive" : s > 8 ? "Moderate" : "Conservative";
+            document.getElementById('rr').innerText = "Risk Profile: " + p;
+        }
+    </script>
+</body>
+</html>
