@@ -3,25 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Our Offerings | Krishna Vriddhi Capital</title>
+    <title>Wealth Services | Krishna Vriddhi Capital</title>
     <style>
         :root { --blue: #002e5b; --green: #2d7a31; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; text-align: center; }
-        nav { background: var(--blue); padding: 15px; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
+        nav { background: var(--blue); padding: 15px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; max-width: 1200px; margin: auto; }
-        .card { background: white; padding: 30px; border-radius: 8px; border-top: 5px solid var(--blue); box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: left; }
-        .wa-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; font-size: 30px; }
+        .header { padding: 60px 20px; background: white; text-align: center; border-bottom: 1px solid #ddd; }
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 20px; max-width: 1100px; margin: auto; }
+        .service-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card h3 { color: var(--blue); border-bottom: 2px solid var(--green); padding-bottom: 10px; }
+        .service-card ul { padding-left: 20px; list-style-type: square; }
+        .service-card li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <nav><a href="index.html">Home</a> <a href="offerings.html">Offerings</a> <a href="tools.html">Strategic Tools</a> <a href="visit.html">Visit Us</a></nav>
-    <h1 style="color: var(--blue); margin-top: 40px;">Professional Wealth Offerings</h1>
-    <div class="grid">
-        <div class="card"><h3 style="color:var(--green)">Wealth Management</h3><p>Comprehensive portfolio management designed for risk-adjusted returns.</p></div>
-        <div class="card"><h3 style="color:var(--green)">Investment Advisory</h3><p>Data-driven insights powered by IIM Alumni expertise.</p></div>
-        <div class="card"><h3 style="color:var(--green)">Strategic Planning</h3><p>Long-term financial roadmaps for individuals and corporates.</p></div>
+
+    <div class="header">
+        <h1>Comprehensive Wealth Solutions</h1>
+        <p>Expert-led investment products designed for HNI and Retail Portfolios.</p>
     </div>
-    <a href="https://api.whatsapp.com/send/?phone=919054829239&text=Hello+Krishna+Vriddhi+Capital%2C+I+am+pavithrag1997%40gmail.com.+I+want+to+inquire+about+your+wealth+services." class="wa-btn" target="_blank">💬</a>
+
+    <div class="services-container">
+        <div class="service-card">
+            <h3>Core Financial Planning</h3>
+            <ul>
+                <li>Holistic Financial Planning</li>
+                <li>Mutual Fund Selection</li>
+                <li>Bonds & Fixed Income Debentures</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Alternative Investments</h3>
+            <ul>
+                <li>Portfolio Management Services (PMS)</li>
+                <li>Alternative Investment Funds (AIF)</li>
+                <li>Unlisted & Private Equity Access</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Tax & Estate Strategy</h3>
+            <ul>
+                <li>Strategic Tax Planning</li>
+                <li>Income Tax Filing Services</li>
+                <li>Estate & Succession Planning</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <h3>Protection & Risk</h3>
+            <ul>
+                <li>Life & General Insurance Audits</li>
+                <li>Comprehensive Risk Assessment</li>
+                <li>Retirement Income Security</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
